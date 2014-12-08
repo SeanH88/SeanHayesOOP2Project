@@ -9,8 +9,16 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
 import java.util.*;
+/**
+ *<h1> FirstGui!</h1>
+ *This Gui gives the user the option to play the game, 
+ *check topscore 
+ *or quit application
+@author Sean Hayes
+@ 8th DEcember 2014*/
 
 public class FirstGui extends JFrame {
+	
 	
 	//private  instance variable
 		//drivers
@@ -24,6 +32,21 @@ public class FirstGui extends JFrame {
 	
 	//mainGUI
 public	FirstGui(){
+	/** This sets up the first  Gui form
+	 *@param setTitle sets the GUI title name
+	 *@param setSize sets the size of FirstGui
+	 *@paramsetDefaultCloseOperation( EXIT_ON_CLOSE ); close the application
+	 *@firstContainer this is where the Gui is displayed
+	 *@param setBackground(Color.darkGray) sets the backgroud color
+	 *@param set Layout of firstConainer to null
+	 *@param firstContainer this is where the Gui is displayed
+	 *@param playButton This is the play button displays the next GUI and starts the quiz
+	 *@param setBound this set where everything goes and what size
+	 *@param setForeground this sets the foreground color of the writing
+	 *@param exitButton quits the application
+	 *@param titleJlabel sets JLabel to Questions
+	 
+	 */
 		setTitle("Quiz Time!!!");
 		setSize (650, 400);
 		setLocation(250,180);
@@ -54,23 +77,24 @@ public	FirstGui(){
    	 	titleLabel.setBounds(130,80,300,70);
    	 	titleLabel.setFont(titleLabel.getFont().deriveFont(36.0f)); //http://stackoverflow.com/questions/17884843/change-jlabel-font-size
    		firstContainer.add(titleLabel);
-		
-		//Construct main name JLabel
-   		/*nameLabel = new JLabel("Please Enter Your Name: ");
-   		nameLabel.setForeground(Color.white);
-   	 	nameLabel.setBounds(120,160,145,20);
-   		firstContainer.add(nameLabel);*/
-   		
-   		//Construct main name TextField
-   	/*	nameTF = new TextField();
-   		nameTF.setForeground(Color.black);
-   		nameTF.setBounds(315,160,150,20);
-   		firstContainer.add(nameTF);*/
+	
+
    		
 		createMenu();
 	}
 	
 	public void createMenu() {
+		/**
+		 *This method creates a Jmenu
+		 *with JItems
+		 *@param navBar name giving to new JMenubar
+		 *@param  setJMenuBar(navBar) displayss the navbar
+		 *@param fJMenu file sets the first Jmenu to file
+		 *@param navBar.add(file) adds the JMenu to JMenu navBar
+		 *@param JmenuItem play JMenuItem("Play") names the JmenuItem as Play
+		 *@param file.add(play); adds the JMenuIitm add to file
+		 *@param file.addSeparator() add  a separator line under JMenu file score
+		 */
 		
 	navBar = new JMenuBar();
 	setJMenuBar(navBar);
@@ -96,7 +120,13 @@ public	FirstGui(){
          //Action MenuListner
          	private class MenuListener implements ActionListener{
          		
+         		
         	public void actionPerformed(ActionEvent e){
+        		/**
+         		 *@ param EXIT exits application when clicked
+         		 *@ param PLAY Starts quiz when clicked
+         		 *@ param About displays JOptionPane for about the game
+         		 */
         		if(e.getActionCommand().equals("EXIT") || e.getActionCommand().equals("Quit")) {
         			System.exit(0);
         			}
